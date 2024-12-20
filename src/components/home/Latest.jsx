@@ -39,7 +39,8 @@ export default function Latest() {
                         spaceBetween={24}
                         slidesPerView={7.5}
                         autoplay={false}
-                        loop={false}
+                        dir='ltr'
+                        loop={true}
                         modules={[Autoplay, Navigation, Pagination]}
                         breakpoints={{
                             1400: {

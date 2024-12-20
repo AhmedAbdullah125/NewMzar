@@ -50,10 +50,12 @@ export default function Paths() {
                 <Swiper
                     // navigation
                     // pagination={{ type: "bullets", clickable: true }}
+                    dir='ltr'
+
                     spaceBetween={32}
                     slidesPerView={7.5}
                     autoplay={false}
-                    loop={false}
+                    loop={true}
                     modules={[Autoplay, Navigation, Pagination]}
                     breakpoints={{
                         1400: {
