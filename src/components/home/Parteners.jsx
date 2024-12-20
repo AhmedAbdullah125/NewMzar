@@ -44,19 +44,17 @@ export default function Parteners() {
     ]
     return (
         <div className="parteners" >
-            <div className="container  m-auto" >
-                <div className="parts-cont">
-                    <div className="partss">
-                        <div className="relative flex  w-full flex-col items-center justify-center overflow-hidden ">
-                            <Marquee pauseOnHover className="[--duration:20s]">
-                                {parts.map((review, index) => (
-                                    <ReviewCard key={index} {...review} />
-                                ))}
-                            </Marquee>
-                        </div>
+            <div className="parts-cont">
+                <div className="partss">
+                    <div className="relative flex  w-full flex-col items-center justify-center overflow-hidden ">
+                        <Marquee pauseOnHover className="[--duration:20s]">
+                            {parts.map((review, index) => (
+                                <ReviewCard key={index} {...review} />
+                            ))}
+                        </Marquee>
                     </div>
-
                 </div>
+
             </div>
         </div>
     )
