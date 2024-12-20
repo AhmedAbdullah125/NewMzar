@@ -1,0 +1,88 @@
+'use client'
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import BlurFade from '../ui/blur-fade';
+import img1 from '/public/gallery/1.webp';
+import img2 from '/public/gallery/2.webp';
+import img3 from '/public/gallery/3.jpg';
+import img5 from '/public/gallery/5.webp';
+import img4 from '/public/gallery/4.jpg';
+import img6 from '/public/gallery/6.jpg';
+import img7 from '/public/gallery/7.jpg';
+import img8 from '/public/gallery/8.jpg';
+import img9 from '/public/gallery/9.jpg';
+import img10 from '/public/gallery/10.jpg';
+import { Fancybox } from "@fancyapps/ui";
+import { motion } from 'framer-motion'; // Importing the motion component from Framer Motion for animations
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
+
+const images = Array.from({ length: 9 }, (_, i) => {
+    const isLandscape = i % 2 === 0;
+    const width = isLandscape ? 800 : 600;
+    const height = isLandscape ? 600 : 800;
+    return `https://picsum.photos/seed/${i + 1}/${width}/${height}`;
+});
+
+export default function Parteners() {
+    const [language, setLanguage] = useState('en');  // Default language is 'en'
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            // Define the headers with the selected language
+            setLanguage(localStorage.getItem('lang'));      
+        }
+    }, []);  // Run this effect whenever the `language` changes
+    Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+    });
+    let imgs =
+        [
+            { url: img1, category: 'photos' },
+            { url: img3, category: 'photos' },
+            { url: img5, category: 'videos' },
+            { url: img2, category: 'photos' },
+            { url: img4, category: 'photos' },
+            { url: img6, category: 'videos' },
+            { url: img7, category: 'videos' },
+            { url: img8, category: 'videos' },
+            { url: img9, category: 'videos' },
+            { url: img10, category: 'photos' },
+        ]
+    let [activeTab, setActiveTab] = useState('all');
+
+    return (
+        <div className="gallery" id='gallery' style={{ direction: language === 'en' ? 'ltr' : 'rtl' }}>
+            <div className="container mx-auto">
+                <h2>{language === 'en' ? 'Gallery' : 'المعرض' }</h2>
+                <p>{language === 'en' ? 'Come to see our visitors how enjoy they experience.' : 'استمتع بالتجربة الكاملة مع تطبيقنا'} </p>
+                <div className="tabs">
+                    <button className={`tab ${activeTab === 'all' ? 'active' : ''}`} onClick={() => setActiveTab('all')}>{language === 'en' ? 'All' : 'الكل' }</button>
+                    <button className={`tab ${activeTab === 'photos' ? 'active' : ''}`} onClick={() => setActiveTab('photos')}>{language === 'en' ? 'Photos' : 'الصور'}</button>
+                    <button className={`tab ${activeTab === 'videos' ? 'active' : ''}`} onClick={() => setActiveTab('videos')}>{language === 'en' ? 'Videos' : 'الفيديوهات' }</button>
+                </div>
+                <section id="photos">
+                    <div className="columns-2 gap-4 sm:columns-3">
+                        {imgs.map((img, idx) => (
+                            (img.category === activeTab || activeTab === 'all') ?
+                                <BlurFade key={idx} delay={0.25 + idx * 0.05} inView>
+                                    {/* <Image
+                                        className="mb-4 size-full rounded-lg object-contain"
+                                        src={img.url}
+                                        alt={`Random stock image ${idx + 1}`}
+                                    /> */}
+                                    <a href={img.url.src} data-fancybox="gallery">
+                                        <figure>
+                                            <Image src={img.url} alt="Mazar" width={200} height={200} className="mb-4 size-full rounded-lg object-contain" />
+                                        </figure>
+                                    </a>
+                                </BlurFade>
+                                :
+                                null
+
+                        ))}
+                    </div>
+                </section>
+            </div>
+        </div>
+    )
+}
