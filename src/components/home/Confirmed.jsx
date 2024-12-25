@@ -2,17 +2,15 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import part1 from '/public/customers/1.png';
-import part2 from '/public/customers/2.png';
-import part3 from '/public/customers/3.png';
-import part4 from '/public/customers/4.png';
-import part5 from '/public/customers/5.png';
-import part6 from '/public/customers/6.png';
-import part7 from '/public/customers/7.png';
-import part8 from '/public/customers/8.png';
-import part9 from '/public/customers/9.png';
-// import part10 from '/public/customers/10.png';
-import NumberTicker from '../ui/number-ticker';
+import part1 from '/public/conf/1.png';
+import part2 from '/public/conf/2.svg';
+import part3 from '/public/conf/3.png';
+import part4 from '/public/conf/4.svg';
+import part6 from '/public/conf/6.png';
+import part5 from '/public/conf/5.png';
+import part8 from '/public/conf/8.png';
+import part7 from '/public/conf/7.png';
+
 import Marquee from '../ui/marquee';
 import { cn } from '@/lib/utils';
 // import { cn } from "@/lib/utils";
@@ -45,17 +43,17 @@ export default function Parteners() {
             </figure>
         );
     };
-    let parts = [{ img: part1.src }, { img: part2 }, { img: part3 }, { img: part4 }, { img: part5 }, { img: part6 }, { img: part7 }, { img: part8 }, { img: part9 }];
+    let parts = [{ img: part1.src }, { img: part2 }, { img: part3 }, { img: part4 }, { img: part6 } , { img: part5 }, { img: part7 }, { img: part8 }];
     
     return (
         <div className="parteners" style={{ direction: language === 'en' ? 'ltr' : 'rtl' }}>
             <div className="container m-auto">
-                <h2>{language === 'en' ? 'Our Success Partners':'شركاء النجاح'  }</h2>
+                <h2>{language === 'en' ? 'Accredited by':'معتمدون لدى'  }</h2>
             </div>
             <div className="parts-cont">
                 <div className="partss" style={{ direction:'ltr' }}>
                     <div className="relative flex  w-full flex-col items-center gap-4 justify-center overflow-hidden  ">
-                        <Marquee reverse pauseOnHover className="[--duration:20s]">
+                        <Marquee pauseOnHover className="[--duration:20s]">
                             {parts.map((review, index) => (
                                 <ReviewCard key={index} {...review} />
                             ))}

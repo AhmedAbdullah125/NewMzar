@@ -11,6 +11,7 @@ import Parteners from '../components/home/Parteners';
 import Gallery from '../components/home/Gallery';
 import Content from '../components/home/Content';
 import Latest from '../components/home/Latest';
+import Confiemed from '../components/home/Confirmed';
 export default function Home() {
   const [lang, setLang] = useState('en');
   useEffect(() => {
@@ -31,14 +32,15 @@ export default function Home() {
       <Hero></Hero>
       <SemiAbout/>
       <Parteners/>
+      <Confiemed/>
       <Paths></Paths>
       {/* <Explore/> */}
       <Gallery/>
       <About></About>
       <AppExplore/>
-      <Content/>
+      {/* <Content/> */}
       <GenSection/>
-      <Latest/>
+      {/* <Latest/> */}
     </main>
   );
 }
