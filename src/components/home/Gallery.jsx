@@ -2,16 +2,15 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import BlurFade from '../ui/blur-fade';
-import img1 from '/public/gallery/1.webp';
-import img2 from '/public/gallery/2.webp';
-import img3 from '/public/gallery/3.jpg';
-import img5 from '/public/gallery/5.webp';
-import img4 from '/public/gallery/4.jpg';
-import img6 from '/public/gallery/6.jpg';
-import img7 from '/public/gallery/7.jpg';
-import img8 from '/public/gallery/8.jpg';
-import img9 from '/public/gallery/9.jpg';
-import img10 from '/public/gallery/10.jpg';
+import img1 from '/public/gallery/client1.png';
+import img2 from '/public/gallery/client2.png';
+import img3 from '/public/gallery/client3.png';
+import img5 from '/public/gallery/client4.png';
+import img6 from '/public/gallery/client6.png';
+import img7 from '/public/gallery/client7.png';
+import img9 from '/public/gallery/client9.png';
+import img10 from '/public/gallery/client10.png';
+import img12 from '/public/gallery/client12.png';
 import { Fancybox } from "@fancyapps/ui";
 import { motion } from 'framer-motion'; // Importing the motion component from Framer Motion for animations
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
@@ -41,12 +40,11 @@ export default function Parteners() {
             { url: img3, category: 'photos' },
             { url: img5, category: 'videos' },
             { url: img2, category: 'photos' },
-            { url: img4, category: 'photos' },
             { url: img6, category: 'videos' },
             { url: img7, category: 'videos' },
-            { url: img8, category: 'videos' },
             { url: img9, category: 'videos' },
             { url: img10, category: 'photos' },
+            { url: img12, category: 'photos' },
         ]
     let [activeTab, setActiveTab] = useState('all');
 

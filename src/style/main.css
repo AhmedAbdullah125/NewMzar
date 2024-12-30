@@ -2018,6 +2018,7 @@ body {
 }
 .parteners .gap-custom {
   gap: 95px;
+  margin-left: 40px;
 }
 
 .parts-cont {
@@ -2031,7 +2032,7 @@ body {
   height: 108px;
 }
 .parts-cont img {
-  height: 80%;
+  height: 60%;
   width: auto;
   opacity: 0.7;
 }
