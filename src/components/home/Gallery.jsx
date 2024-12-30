@@ -53,11 +53,11 @@ export default function Parteners() {
             <div className="container mx-auto">
                 <h2>{language === 'en' ? 'Gallery' : 'المعرض' }</h2>
                 <p>{language === 'en' ? 'Come to see our visitors how enjoy they experience.' : 'استمتع بالتجربة الكاملة مع تطبيقنا'} </p>
-                <div className="tabs">
+                {/* <div className="tabs">
                     <button className={`tab ${activeTab === 'all' ? 'active' : ''}`} onClick={() => setActiveTab('all')}>{language === 'en' ? 'All' : 'الكل' }</button>
                     <button className={`tab ${activeTab === 'photos' ? 'active' : ''}`} onClick={() => setActiveTab('photos')}>{language === 'en' ? 'Photos' : 'الصور'}</button>
                     <button className={`tab ${activeTab === 'videos' ? 'active' : ''}`} onClick={() => setActiveTab('videos')}>{language === 'en' ? 'Videos' : 'الفيديوهات' }</button>
-                </div>
+                </div> */}
                 <section id="photos">
                     <div className="columns-2 gap-4 sm:columns-3">
                         {imgs.map((img, idx) => (

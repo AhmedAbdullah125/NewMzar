@@ -1364,27 +1364,10 @@ export default function FormPage(props) {
         ];
     return (
         loading ? <div className="w-full"><Loading /> </div> :
-            <motion.div
-                initial={{ opacity: 0, x: 300 }} // Initial animation state (faded and shifted left)
-                whileInView={{ opacity: 1, x: 0 }} // Animation state when in view (fully visible and reset position)
-                viewport={{ once: true }}
-                transition={{
-                    delay: 0.2,
-                    // type: 'spring', // Using spring animation for smooth motion
-                    bounce: 0.2, // Small bounce effect for the animation
-                }}
-                className='w-full form'>
+            <div className='w-full form'>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(Submit)} >
-                        <motion.div
-                            initial={{ opacity: 0, x: 100 }} // Initial animation state (faded and shifted left)
-                            whileInView={{ opacity: 1, x: 0 }} // Animation state when in view (fully visible and reset position)
-                            viewport={{ once: true }}
-                            transition={{
-                                delay: 0.3,
-                                // type: 'spring', // Using spring animation for smooth motion
-                                bounce: 0.2, // Small bounce effect for the animation
-                            }}>
+                        <div >
                             <FormField
                                 control={form.control}
                                 name="nameLabel"
@@ -1398,16 +1381,8 @@ export default function FormPage(props) {
                                     </FormItem>
                                 )}
                             />
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, x: 100 }} // Initial animation state (faded and shifted left)
-                            whileInView={{ opacity: 1, x: 0 }} // Animation state when in view (fully visible and reset position)
-                            viewport={{ once: true }}
-                            transition={{
-                                delay: 0.3,
-                                // type: 'spring', // Using spring animation for smooth motion
-                                bounce: 0.2, // Small bounce effect for the animation
-                            }}>
+                        </div>
+                        <div >
                             <FormField
                                 control={form.control}
                                 name="name"
@@ -1425,16 +1400,8 @@ export default function FormPage(props) {
                                     </FormItem>
                                 )}
                             />
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, x: 100 }} // Initial animation state (faded and shifted left)
-                            whileInView={{ opacity: 1, x: 0 }} // Animation state when in view (fully visible and reset position)
-                            viewport={{ once: true }}
-                            transition={{
-                                delay: 0.4,
-                                // type: 'spring', // Using spring animation for smooth motion
-                                bounce: 0.2, // Small bounce effect for the animation
-                            }}>
+                        </div>
+                        <div >
                             <FormField
                                 control={form.control}
                                 name="whatsapp"
@@ -1448,16 +1415,8 @@ export default function FormPage(props) {
                                     </FormItem>
                                 )}
                             />
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, x: 100 }} // Initial animation state (faded and shifted left)
-                            whileInView={{ opacity: 1, x: 0 }} // Animation state when in view (fully visible and reset position)
-                            viewport={{ once: true }}
-                            transition={{
-                                delay: 0.4,
-                                // type: 'spring', // Using spring animation for smooth motion
-                                bounce: 0.2, // Small bounce effect for the animation
-                            }}>
+                        </div>
+                        <div >
                             <FormField
                                 className="w-full"
                                 control={form.control}
@@ -1476,16 +1435,8 @@ export default function FormPage(props) {
                                     </FormItem>
                                 )}
                             />
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, x: 100 }} // Initial animation state (faded and shifted left)
-                            whileInView={{ opacity: 1, x: 0 }} // Animation state when in view (fully visible and reset position)
-                            viewport={{ once: true }}
-                            transition={{
-                                delay: 0.5,
-                                // type: 'spring', // Using spring animation for smooth motion
-                                bounce: 0.2, // Small bounce effect for the animation
-                            }}>
+                        </div>
+                        <div >
                             <FormField
                                 control={form.control}
                                 name="whatsapp"
@@ -1499,16 +1450,8 @@ export default function FormPage(props) {
                                     </FormItem>
                                 )}
                             />
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, x: 100 }} // Initial animation state (faded and shifted left)
-                            whileInView={{ opacity: 1, x: 0 }} // Animation state when in view (fully visible and reset position)
-                            viewport={{ once: true }}
-                            transition={{
-                                delay: 0.5,
-                                // type: 'spring', // Using spring animation for smooth motion
-                                bounce: 0.2, // Small bounce effect for the animation
-                            }}>
+                        </div>
+                        <div >
                             <FormField
                                 control={form.control}
                                 name="destniation"
@@ -1537,16 +1480,8 @@ export default function FormPage(props) {
                                     </FormItem>
                                 )}
                             />
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, x: 100 }} // Initial animation state (faded and shifted left)
-                            whileInView={{ opacity: 1, x: 0 }} // Animation state when in view (fully visible and reset position)
-                            viewport={{ once: true }}
-                            transition={{
-                                delay: 0.6,
-                                // type: 'spring', // Using spring animation for smooth motion
-                                bounce: 0.2, // Small bounce effect for the animation
-                            }}>
+                        </div>
+                        <div >
                             <FormField
                                 control={form.control}
                                 name="whatsapp"
@@ -1560,16 +1495,8 @@ export default function FormPage(props) {
                                     </FormItem>
                                 )}
                             />
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, x: 100 }} // Initial animation state (faded and shifted left)
-                            whileInView={{ opacity: 1, x: 0 }} // Animation state when in view (fully visible and reset position)
-                            viewport={{ once: true }}
-                            transition={{
-                                delay: 0.6,
-                                // type: 'spring', // Using spring animation for smooth motion
-                                bounce: 0.2, // Small bounce effect for the animation
-                            }}>
+                        </div>
+                        <div >
                             <FormField
                                 control={form.control}
                                 name="date"
@@ -1608,7 +1535,7 @@ export default function FormPage(props) {
                                     </FormItem>
                                 )}
                             />
-                        </motion.div>
+                        </div>
                         <div className='captcha'>
                             <ReCAPTCHA sitekey="6Lc3A4oqAAAAALKG0Ww3vyaaIdmMWIAjXIi6xvoa" onChange={onChange} />
                             <p className={`${!captchaa && visited ? 'block' : 'hidden'} captcha-text`}>Please verify that you are not a robot</p>
@@ -1616,6 +1543,6 @@ export default function FormPage(props) {
                         <Button type="submit" className='text-xl py-4 rounded-xl min-w-32 h-13 submit '>Submit</Button>
                     </form>
                 </Form>
-            </motion.div>
+            </div>
     );
 }

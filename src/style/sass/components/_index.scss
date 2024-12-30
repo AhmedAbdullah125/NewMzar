@@ -26,20 +26,20 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            .iPhones{
-                img{
-                    animation: dance 2s infinite alternate
-                }
-            }
+            // .iPhones{
+            //     img{
+            //         animation: dance 2s infinite alternate
+            //     }
+            // }
         }
 
         .hero-text {
             display: flex;
             flex-direction: column;
             gap: 16px;
-            max-width: 450px;
-
+            
             h1 {
+                max-width: 450px;
                 font-size: 56px;
                 font-weight: 600;
                 color: $white;
@@ -100,9 +100,9 @@
                 }
             }
 
-            .feature:hover {
-                background: linear-gradient(118.84deg, #FFFAFA 38.25%, #1AC5BD 97.19%)
-            }
+            // .feature:hover {
+            //     background: linear-gradient(118.84deg, #FFFAFA 38.25%, #1AC5BD 97.19%)
+            // }
         }
     }
 }
@@ -507,7 +507,6 @@ html {
 
 .AppExplore {
 
-
     background-color: rgba(255, 255, 255, 0.7);
 
     .img-cont {
@@ -518,6 +517,7 @@ html {
 
     .l-side {
         width: 70%;
+        
     }
 
     .genSection {
@@ -546,6 +546,24 @@ html {
 
             a {
                 width: fit-content;
+            }
+            .app-dowmload{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                @media screen and (max-width: 767px) {
+                    flex-direction: row;
+                    
+                    a{
+                        width: 100%;
+                        overflow: hidden;
+                        img{
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
             }
 
 

@@ -601,16 +601,13 @@ header .side-menu-active {
   justify-content: space-between;
   width: 100%;
 }
-.hero .overlay .welcome .iPhones img {
-  animation: dance 2s infinite alternate;
-}
 .hero .overlay .hero-text {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 450px;
 }
 .hero .overlay .hero-text h1 {
+  max-width: 450px;
   font-size: 56px;
   font-weight: 600;
   color: var(--white-color);
@@ -661,9 +658,6 @@ header .side-menu-active {
 .hero .overlay .features .feature img {
   width: 50px;
   height: 50px;
-}
-.hero .overlay .features .feature:hover {
-  background: linear-gradient(118.84deg, #FFFAFA 38.25%, #1AC5BD 97.19%);
 }
 
 .rtl {
@@ -1036,6 +1030,26 @@ html {
 .AppExplore .genSection .l-side a {
   width: -moz-fit-content;
   width: fit-content;
+}
+.AppExplore .genSection .l-side .app-dowmload {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media screen and (max-width: 767px) {
+  .AppExplore .genSection .l-side .app-dowmload {
+    flex-direction: row;
+  }
+  .AppExplore .genSection .l-side .app-dowmload a {
+    width: 100%;
+    overflow: hidden;
+  }
+  .AppExplore .genSection .l-side .app-dowmload a img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 .AppExplore .genSection .img-cont {
   width: 30%;
