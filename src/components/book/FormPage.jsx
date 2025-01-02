@@ -118,7 +118,7 @@ export default function FormPage(props) {
             name: z.string().min(1, { message: "Name is required" }).max(50, { message: "Name must be at most 50 characters" }),
             phone: z.string().refine(validator.isMobilePhone, { message: "Invalid phone number" }),
             date: z.date(),
-            destniation: z.string().min(1, { message: "Destniation is required" }),
+            destniation: z.string().min(1, { message: "Destniation is required" }).optional(),
         })
     const form = useForm({
         resolver: zodResolver(formSchema),
@@ -1364,7 +1364,7 @@ export default function FormPage(props) {
         ];
     return (
         loading ? <div className="w-full"><Loading /> </div> :
-            <div className='w-full form'>
+            <div className='w-full form' style={language === 'ar' ? { direction: 'rtl' } : { direction: 'ltr' }}>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(Submit)} >
                         <div >
@@ -1375,7 +1375,7 @@ export default function FormPage(props) {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormControl>
-                                            <FormLabel>Name</FormLabel>
+                                            <FormLabel>{language==='ar'?'الاسم':'Name'}</FormLabel>
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -1409,7 +1409,7 @@ export default function FormPage(props) {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormControl>
-                                            <FormLabel>Whats app number</FormLabel>
+                                            <FormLabel>{language==='ar'?'رقم الواتساب':'whatsapp number'}</FormLabel>
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -1418,7 +1418,8 @@ export default function FormPage(props) {
                         </div>
                         <div >
                             <FormField
-                                className="w-full"
+                                className="w-full ltr"
+                                style={{ direction: 'ltr' }}
                                 control={form.control}
                                 name="phone" // Field for phone number
                                 render={({ field }) => (
@@ -1444,7 +1445,7 @@ export default function FormPage(props) {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormControl>
-                                            <FormLabel>Destniation (optional)</FormLabel>
+                                            <FormLabel>{language==='ar'?'الوجهة':'Destniation'}</FormLabel>
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -1489,7 +1490,7 @@ export default function FormPage(props) {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormControl>
-                                            <FormLabel>Arrive date (optional)</FormLabel>
+                                            <FormLabel>{language==='ar'?'تاريخ الوصول':'Arrive date'}</FormLabel>
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>

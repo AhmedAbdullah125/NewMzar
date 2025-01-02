@@ -31,7 +31,7 @@ export default function Home() {
     <main>
       <Hero></Hero>
       <SemiAbout/>
-      <Parteners/>
+      {/* <Parteners/> */}
       <Confiemed/>
       <Paths></Paths>
       {/* <Explore/> */}

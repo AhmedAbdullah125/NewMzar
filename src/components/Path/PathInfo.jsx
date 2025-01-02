@@ -1,5 +1,5 @@
 'use client'
-import React, {  useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Fancybox } from "@fancyapps/ui";
@@ -13,7 +13,16 @@ export default function PathInfo(pathData) {
   // let [language, setLanguage] = useState(pathData.lang);
   let [language, setLanguage] = useState('en');
   console.log(language);
-  
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Define the headers with the selected language
+      setLanguage(localStorage.getItem('lang'));
+      const headers = {
+        lang: localStorage.getItem('lang'), // Change language dynamically based on state
+      };
+      // Fetch data from the API with Axios
+    }
+  }, []);
   
   console.log(data);
   
@@ -79,7 +88,7 @@ export default function PathInfo(pathData) {
       </div>
       <div className="facilities-duration">
         <div className="facilities w-full">
-          <h3>Facilities</h3>
+          <h3>{language === 'en' ? 'Facilities' : 'وسائل الرحلة'}</h3>
           <div className="facilities-cont">
             {
               data.services.map((facility, index) =>

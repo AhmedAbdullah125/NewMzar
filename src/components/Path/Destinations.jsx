@@ -1,12 +1,12 @@
 'use client'
-import React, { useRef, useState } from 'react';
+import React, { use, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 export default function PathInfo(pathData) {
     let [more, setMore] = useState(false);
     let [data, setData] = useState(pathData.data);
-//   let [language, setLanguage] = useState(data.lang);
-  let [language, setLanguage] = useState('en');
+    //   let [language, setLanguage] = useState(data.lang);
+    let [language, setLanguage] = useState('en');
 
     let destinations = data.locations
     let [destinationsCopy, setDestinationsCopy] = useState(destinations.slice(0, 4));
@@ -16,7 +16,15 @@ export default function PathInfo(pathData) {
     // else {
     //     setDestinationsCopy([...destinations]);
     // }
-
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setLanguage(localStorage.getItem('lang'));
+            // Define the headers with the selected language
+            const headers = {
+                lang: localStorage.getItem('lang'), // Change language dynamically based on state
+            };
+        }
+    }, []);
     return (
         <div className="destinations container m-auto">
             <div className="destinations-drid">
@@ -73,7 +81,7 @@ export default function PathInfo(pathData) {
 
             <div className="ready">
                 <h2>{language === 'en' ? 'Ready to start your journey?' : 'مستعد لبدء رحلتك؟'} </h2>
-                <p>{language === 'en' ? 'Please contact us and book your trip' :'يرجى الاتصال بنا وحجز رحلتك' }</p>
+                <p>{language === 'en' ? 'Please contact us and book your trip' : 'يرجى الاتصال بنا وحجز رحلتك'}</p>
                 <Link href={'/book'}>{language === 'en' ? 'Book Now' : 'حجز الان'}</Link>
             </div>
         </div>
